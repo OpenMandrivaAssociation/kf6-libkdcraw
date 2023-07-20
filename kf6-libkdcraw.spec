@@ -28,6 +28,8 @@ BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: cmake(PlasmaWaylandProtocols)
 BuildRequires: cmake(Qt6WaylandClient)
+BuildRequires: pkgconfig(libraw)
+BuildRequires: pkgconfig(libraw_r)
 Requires: %{libname} = %{EVRD}
 
 %description
