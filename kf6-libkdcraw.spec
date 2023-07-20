@@ -2,7 +2,7 @@
 %define devname %mklibname KF6Dcraw -d
 %define git 20230715
 
-Name: kf6-kguiaddons
+Name: kf6-libkdcraw
 Version: 5.240.0
 Release: %{?git:0.%{git}.}1
 Source0: https://invent.kde.org/graphics/libkdcraw/-/archive/master/libkdcraw-master.tar.bz2#/libkdcraw-%{git}.tar.bz2
