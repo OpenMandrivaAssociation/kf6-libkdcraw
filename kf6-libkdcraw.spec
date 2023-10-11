@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Dcraw
 %define devname %mklibname KF6Dcraw -d
-%define git 20231005
+%define git 20231011
 
 Name: kf6-libkdcraw
 Version: 5.240.0
