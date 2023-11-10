@@ -1,11 +1,19 @@
-%define libname %mklibname KF6Dcraw
-%define devname %mklibname KF6Dcraw -d
-%define git 20231103
+%define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 70 -o "$(echo %{version} |cut -d. -f3)" -ge 70 ] && echo -n un; echo -n stable)
+
+%define oldlibname %mklibname KF6Dcraw
+%define olddevname %mklibname KF6Dcraw -d
+%define libname %mklibname KDcrawQt6
+%define devname %mklibname KDcrawQt6 -d
+#define git 20231103
 
 Name: kf6-libkdcraw
-Version: 5.240.0
+Version: 24.01.75
 Release: %{?git:0.%{git}.}1
+%if 0%{?git:1}
 Source0: https://invent.kde.org/graphics/libkdcraw/-/archive/master/libkdcraw-master.tar.bz2#/libkdcraw-%{git}.tar.bz2
+%else
+Source0: https://download.kde.org/%{stable}/release-service/%{version}/src/libkdcraw-%{version}.tar.xz
+%endif
 Summary: Library for handling RAW images
 URL: https://invent.kde.org/graphics/libkdcraw
 License: CC0-1.0 LGPL-2.0+ LGPL-2.1 LGPL-3.0
@@ -39,6 +47,7 @@ Library for handling RAW images
 Summary: Library for handling RAW images
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
+%rename %{oldlibname}
 
 %description -n %{libname}
 Library for handling RAW images
@@ -47,6 +56,7 @@ Library for handling RAW images
 Summary: Development files for %{name}
 Group: Development/C
 Requires: %{libname} = %{EVRD}
+%rename %{olddevname}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
@@ -71,8 +81,8 @@ Library for handling RAW images
 %{_datadir}/qlogging-categories6/libkdcraw.categories
 
 %files -n %{devname}
-%{_includedir}/KF6/KDCRAW
-%{_libdir}/cmake/KF6KDcraw
+%{_includedir}/KDcrawQt6
+%{_libdir}/cmake/KDcrawQt6
 
 %files -n %{libname}
-%{_libdir}/libKF6KDcraw.so*
+%{_libdir}/libKDcrawQt6.so*
