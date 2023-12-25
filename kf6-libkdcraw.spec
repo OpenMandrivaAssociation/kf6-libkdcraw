@@ -7,7 +7,7 @@
 #define git 20231103
 
 Name: kf6-libkdcraw
-Version: 24.01.80
+Version: 24.01.85
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/graphics/libkdcraw/-/archive/master/libkdcraw-master.tar.bz2#/libkdcraw-%{git}.tar.bz2
