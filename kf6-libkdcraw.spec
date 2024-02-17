@@ -8,7 +8,7 @@
 
 Name: kf6-libkdcraw
 Version: 24.01.90
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0: https://invent.kde.org/graphics/libkdcraw/-/archive/master/libkdcraw-master.tar.bz2#/libkdcraw-%{git}.tar.bz2
 %else
